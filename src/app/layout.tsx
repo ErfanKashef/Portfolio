@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fira_Code } from "next/font/google";
+import { Fira_Code, Noto_Kufi_Arabic } from "next/font/google";
 import Footer from "./_components/footer";
 import MediaHeader from "./_components/media-header";
 import Navbar from "./_components/navbar";
@@ -8,6 +8,11 @@ import "./globals.css";
 const Firacode = Fira_Code({
   variable: "--font-fira-code",
   subsets: ["latin"],
+});
+
+const Kufi = Noto_Kufi_Arabic({
+  variable: "--font-kufi-arabic",
+  subsets: ["arabic"],
 });
 
 export const metadata: Metadata = {
@@ -21,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${Firacode.variable}  `}>
+    <html lang="en" className={`${Firacode.variable} ${Kufi.variable} `}>
       <body className={` font-fira-code `}>
         <MediaHeader />
         <div className="container mx-auto w-full">
