@@ -29,3 +29,54 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 16px;
+}
+    
+.div2 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 6;
+    grid-row-start: 1;
+}
+
+.div3 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 6;
+    grid-row-start: 3;
+}
+
+.div4 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 6;
+    grid-row-start: 5;
+}
+
+.div5 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 1;
+}
+
+.div6 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 5;
+    grid-row-start: 3;
+}
+
+.div7 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 1;
+}
+
+.div9 {
+    grid-column: span 3 / span 3;
+    grid-row: span 6 / span 6;
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
