@@ -2,9 +2,12 @@ import {
   IconArrowRight,
   IconBrandInstagram,
   IconMail,
+  IconPhone,
   IconPlayerPlay,
 } from "@tabler/icons-react";
 import Image from "next/image";
+import Card from "./_components/card";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -93,85 +96,16 @@ export default function Home() {
                 </div>
                 <div className="border border-primary h-[1px] w-3/4"></div>
               </div>
-              <div className="flex flex-row items-center">
+              <Link href={"/projects"} className="flex flex-row items-center">
                 <p className="text-base font-medium w-full">View all</p>
                 <IconArrowRight size={42} />
-              </div>
+              </Link>
             </div>
           </div>
           <div className="flex flex-wrap gap-4 items-center justify-center">
-            <div className="border border-gray-primary">
-              <Image
-                src={"/images/pixel.png"}
-                alt="pixel"
-                width={350}
-                height={540}
-                className=""
-              />
-              <div className="border border-gray-primary p-2">
-                <p className="text-base font-normal">
-                  Next.js Tailwind CSS TypeScript
-                </p>
-              </div>
-              <div className="p-4 flex flex-col gap-4 items-start">
-                <p className="text-2xl font-medium">pixelgenius</p>
-                <p className="text-base font-normal text-gray-primary">
-                  Market place
-                </p>
-                <div className="flex gap-1 items-center px-4  py-2 border border-primary">
-                  <p>Demo</p>
-                  <IconPlayerPlay scale={10} />
-                </div>
-              </div>
-            </div>
-            <div className="border border-gray-primary">
-              <Image
-                src={"/images/pixel.png"}
-                alt="pixel"
-                width={350}
-                height={540}
-                className=""
-              />
-              <div className="border border-gray-primary p-2">
-                <p className="text-base font-normal">
-                  Next.js Tailwind CSS TypeScript
-                </p>
-              </div>
-              <div className="p-4 flex flex-col gap-4 items-start">
-                <p className="text-2xl font-medium">pixelgenius</p>
-                <p className="text-base font-normal text-gray-primary">
-                  Market place
-                </p>
-                <div className="flex gap-1 items-center px-4  py-2 border border-primary">
-                  <p>Demo</p>
-                  <IconPlayerPlay scale={10} />
-                </div>
-              </div>
-            </div>
-            <div className="border border-gray-primary">
-              <Image
-                src={"/images/pixel.png"}
-                alt="pixel"
-                width={350}
-                height={540}
-                className=""
-              />
-              <div className="border border-gray-primary p-2">
-                <p className="text-base font-normal">
-                  Next.js Tailwind CSS TypeScript
-                </p>
-              </div>
-              <div className="p-4 flex flex-col gap-4 items-start">
-                <p className="text-2xl font-medium">pixelgenius</p>
-                <p className="text-base font-normal text-gray-primary">
-                  Market place
-                </p>
-                <div className="flex gap-1 items-center px-4  py-2 border border-primary">
-                  <p>Demo</p>
-                  <IconPlayerPlay scale={10} />
-                </div>
-              </div>
-            </div>
+            <Card />
+            <Card />
+            <Card />
           </div>
         </div>
         {/* skills */}
@@ -359,6 +293,10 @@ export default function Home() {
                 <div className="flex gap-2 items-center">
                   <IconBrandInstagram size={32} />
                   <p>erfan_kasheff</p>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <IconPhone size={32} />
+                  <p>09355633507</p>
                 </div>
               </div>
             </div>
