@@ -29,18 +29,22 @@ const Aboutpage = () => {
   return (
     <div>
       {/* heder */}
-      <div className="pb-32">
+      <div className="pb-32 px-4">
         <div>
           <div className="flex flex-row gap-0.5 items-center pt-10">
-            <span className="text-primary text-4xl font-medium">/ </span>
-            <p className="text-4xl font-medium">about-me</p>
+            <span className="text-primary text-3xl md:text-4xl font-medium">
+              /{" "}
+            </span>
+            <p className="text-3xl md:text-4xl font-medium">about-me</p>
           </div>
         </div>
-        <div className="pb-28">
-          <p className="text-base font-normal ">Who am i?</p>
+
+        <div className="pb-10 md:pb-28">
+          <p className="text-base font-normal">Who am i?</p>
         </div>
-        <div className="flex ">
-          <div className="w-1/2 flex flex-col gap-10">
+
+        <div className="flex flex-col md:flex-row gap-10">
+          <div className="w-full md:w-1/2 flex flex-col gap-6 md:gap-10">
             <p>
               Hi, I’m Erfan – a front-end developer passionate about building
               beautiful and high-performance web interfaces using Next.js,
@@ -65,28 +69,30 @@ const Aboutpage = () => {
               a focus on clean structure, user experience, and performance.
             </p>
           </div>
-          <div className="flex justify-center items-center w-1/2 relative">
+
+          <div className="w-full md:w-1/2 flex justify-center items-center relative mt-10 md:mt-0">
             <Image
               src="/images/erfankashef4.png"
               alt="Erfan Kashef"
-              width={700}
-              height={700}
+              width={400}
+              height={400}
+              className="w-[70%] md:w-[400px] h-auto"
             />
             <Image
-              src={"svg/Dots.svg"}
-              alt="Erfan Kashef"
+              src="/svg/Dots.svg"
+              alt="Dots"
               width={100}
               height={100}
-              className="absolute bottom-20 right-40 "
+              className="absolute bottom-10 right-10 hidden md:block"
             />
             <Image
-              src={"svg/Logo.svg"}
-              alt="Erfan Kashef"
+              src="/svg/Logo.svg"
+              alt="Logo"
               width={300}
               height={300}
-              className="absolute top-0 -z-10 "
+              className="absolute top-0 -z-10 hidden md:block"
             />
-            <div className="absolute border border-gray-primary w-24 h-24 bottom-15 left-45"></div>
+            <div className="hidden md:block absolute border border-gray-primary w-24 h-24 bottom-16 left-36"></div>
           </div>
         </div>
       </div>

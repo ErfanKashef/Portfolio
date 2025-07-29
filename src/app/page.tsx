@@ -264,44 +264,46 @@ export default function Home() {
           </div>
         </div>
         {/* contact */}
-        <div className="pb-24">
-          <div className="pb-5">
-            <div className="flex gap-4 items-center">
-              <div className="w-full flex items-center gap-10">
-                <div className="flex">
-                  <span className="text-primary text-4xl font-medium">#</span>
-                  <p className="text-4xl font-medium">contacts</p>
-                </div>
-                <div className="border border-primary h-[1px] w-2/6"></div>
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-between items-center">
-            <div className="w-1/2">
-              <p>
-                I’m interested in freelance opportunities. However, if you have
-                other request or question, don’t hesitate to contact me
-              </p>
-            </div>
-            <div className="">
-              <div className="border border-gray-primary p-2 text-center">
-                <p>Message me here</p>
-                <div className="flex gap-2 items-center">
-                  <IconMail size={32} />
-                  <p>erfankashefdev@gamil.com</p>
-                </div>
-                <div className="flex gap-2 items-center">
-                  <IconBrandInstagram size={32} />
-                  <p>erfan_kasheff</p>
-                </div>
-                <div className="flex gap-2 items-center">
-                  <IconPhone size={32} />
-                  <p>09355633507</p>
+        <section id="contact">
+          <div className="pb-24">
+            <div className="pb-5">
+              <div className="flex gap-4 items-center">
+                <div className="w-full flex items-center gap-10">
+                  <div className="flex">
+                    <span className="text-primary text-4xl font-medium">#</span>
+                    <p className="text-4xl font-medium">contacts</p>
+                  </div>
+                  <div className="border border-primary h-[1px] w-2/6"></div>
                 </div>
               </div>
             </div>
+            <div className="flex justify-between items-center">
+              <div className="w-1/2">
+                <p>
+                  I’m interested in freelance opportunities. However, if you
+                  have other request or question, don’t hesitate to contact me
+                </p>
+              </div>
+              <div className="">
+                <div className="border border-gray-primary p-2 text-center">
+                  <p>Message me here</p>
+                  <div className="flex gap-2 items-center">
+                    <IconMail size={32} />
+                    <p>erfankashefdev@gamil.com</p>
+                  </div>
+                  <div className="flex gap-2 items-center">
+                    <IconBrandInstagram size={32} />
+                    <p>erfan_kasheff</p>
+                  </div>
+                  <div className="flex gap-2 items-center">
+                    <IconPhone size={32} />
+                    <p>09355633507</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

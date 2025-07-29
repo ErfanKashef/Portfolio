@@ -29,9 +29,11 @@ const Navbar = () => {
           </Link>
         </div>
         <div>
-          <p className="text-base font-medium">
-            <span className="text-primary">#</span> Contact
-          </p>
+          <Link href="#contact" className="cursor-pointer" scroll={true}>
+            <p className="text-base font-medium">
+              <span className="text-primary">#</span> Contact
+            </p>
+          </Link>
         </div>
       </div>
     </nav>
