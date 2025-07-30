@@ -3,33 +3,47 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="pt-10 border-t border-gray-primary">
-      <div className="flex justify-between items-center">
+    <footer className="pt-10 border-t border-gray-primary px-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-6">
+        {/* اطلاعات شخصی */}
         <div className="flex flex-col gap-2">
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
             <div className="text-base font-medium">Erfan Kashef</div>
-            <div className="text-base font-normal text-gray-primary underline">
-              <Link href="erfankashefdev@gamil.com" type="email">
-                erfankashefdev@gamil.com
-              </Link>
-            </div>
+            <Link
+              href="mailto:erfankashefdev@gmail.com"
+              className="text-base font-normal text-gray-primary underline"
+            >
+              erfankashefdev@gmail.com
+            </Link>
           </div>
-          <div>
-            <p className="text-base font-medium">front-end developer</p>
-          </div>
+          <p className="text-base font-medium">front-end developer</p>
         </div>
+
+        {/* بخش مدیا */}
         <div className="flex flex-col gap-2">
-          <div>
-            <p className="text-2xl font-medium">Media</p>
-          </div>
-          <div className="flex gap-2 items-center text-gray-primary">
-            <IconBrandGithub size={32} />
-            <IconBrandInstagram size={32} />
+          <p className="text-2xl font-medium">Media</p>
+          <div className="flex gap-3 items-center text-gray-primary">
+            <a
+              href="https://github.com/erfankashef"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconBrandGithub size={28} />
+            </a>
+            <a
+              href="https://instagram.com/erfan_kasheff"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <IconBrandInstagram size={28} />
+            </a>
           </div>
         </div>
       </div>
-      <div className="text-center text-gray-primary">
-        <p>© 2023 Erfan Kashef. All rights reserved.</p>
+
+      {/* کپی‌رایت */}
+      <div className="text-center text-gray-primary pb-4 text-sm">
+        <p>© 2025 Erfan Kashef. All rights reserved.</p>
       </div>
     </footer>
   );

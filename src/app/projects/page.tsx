@@ -11,36 +11,54 @@ const Projectspage = () => {
             projects
           </p>
         </div>
-        <div className="">
-          {/* complete-apps */}
-          <div>
-            <div className="pb-12">
-              <p className="text-4xl font-medium">
-                <span className="text-4xl text-primary font-medium">#</span>{" "}
-                complete-apps
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4 justify-start items-center pb-20">
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-              <Card />
-            </div>
+
+        {/* complete-apps */}
+        <div className="flex flex-wrap gap-4 items-center justify-center pb-24 ">
+          <Card
+            image="/images/pixel.png"
+            tech="Next.js Tailwind CSS TypeScript"
+            title="pixelgenius"
+            description="Market place"
+            buttonLabel="View Project"
+            showButton={false}
+          />
+          <Card
+            image="/images/leven.png"
+            tech="Next.js Tailwind CSS TypeScript"
+            title="pixelgenius"
+            description="Market place"
+            buttonLabel="View Project"
+            showButton={false}
+          />
+          <Card
+            image="/images/prtfolio.png"
+            tech="Next.js Tailwind CSS TypeScript"
+            title="pixelgenius"
+            description="Market place"
+            buttonLabel="View Project"
+            showButton={false}
+          />
+          <Card
+            image="/images/cigaret.png"
+            tech="Next.js Tailwind CSS TypeScript"
+            title="pixelgenius"
+            description="Market place"
+            buttonLabel="View Project"
+            showButton={false}
+          />
+        </div>
+        {/* small-projects */}
+        <div>
+          <div className="pb-12">
+            <p className="text-4xl font-medium">
+              <span className="text-primary text-4xl font-medium">#</span>{" "}
+              small-projects
+            </p>
           </div>
-          {/* small-projects */}
-          <div>
-            <div className="pb-12">
-              <p className="text-4xl font-medium">
-                <span className="text-primary text-4xl font-medium">#</span>{" "}
-                small-projects
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4 justify-start items-center pb-44">
-              <Miniprojectcard />
-              <Miniprojectcard />
-              <Miniprojectcard />
-            </div>
+          <div className="flex flex-wrap gap-4 justify-start items-center pb-44">
+            <Miniprojectcard />
+            <Miniprojectcard />
+            <Miniprojectcard />
           </div>
         </div>
       </div>

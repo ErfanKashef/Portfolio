@@ -13,33 +13,38 @@ export default function Home() {
   return (
     <div className="pt-10">
       {/* heder */}
-      <div className="flex justify-center items-center pb-24">
-        <div className="flex gap-3 items-center">
-          <div className="flex flex-col gap-7 w-1/2">
-            <p className="text-4xl font-semibold">
+      <div className="flex justify-center items-center pb-24 px-4">
+        <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start">
+          {/* text */}
+          <div className="flex flex-col gap-7 w-full lg:w-1/2 text-center lg:text-left">
+            <p className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-snug">
               Erfan Kashef is a{" "}
               <span className="text-primary">front-end developer</span> who
               loves to build
             </p>
-            <p className="text-base font-normal text-gray-primary">
+            <p className="text-sm sm:text-base text-gray-primary">
               He crafts responsive websites where technologies meet creativity
             </p>
             <div>
-              <button
-                className="border border-primary text-white px-4 py-2 rounded-md"
-                type="button"
-              >
-                Contact me!!
-              </button>
+              <Link href="#contact" scroll={true}>
+                <button
+                  className="border border-primary text-white px-4 py-2 rounded-md"
+                  type="button"
+                >
+                  Contact me!!
+                </button>
+              </Link>
             </div>
           </div>
-          <div className="relative">
+
+          {/* Image */}
+          <div className="relative flex flex-col items-center">
             <Image
               src={"svg/Logo.svg"}
               alt="Erfan Kashef"
               width={200}
               height={200}
-              className="absolute top-1 left-6 -z-10"
+              className="absolute top-1 left-6 -z-10 hidden lg:block"
             />
             <Image
               src="/images/ErfanKashef.png"
@@ -53,35 +58,33 @@ export default function Home() {
               alt="Erfan Kashef"
               width={100}
               height={100}
-              className="absolute bottom-24 right-11 "
+              className="absolute bottom-24 right-11 hidden lg:block"
             />
-            <div className="border-1 border-gray-primary p-2 flex gap-2 items-center mt-2">
-              <div className="bg-primary w-5 h-5"></div>
+            <div className="border border-gray-primary px-4 py-2 flex gap-2 items-center mt-4 text-sm">
+              <div className="bg-primary w-4 h-4"></div>
               <p>
                 Currently working on{" "}
-                <span className="text-primary font-bold text-base">
-                  pixelgenius
-                </span>
+                <span className="text-primary font-bold">pixelgenius</span>
               </p>
             </div>
           </div>
         </div>
       </div>
       {/*  quotation and more */}
-      <div className="flex flex-col justify-center items-center pb-29 gap-5">
-        <div className="border border-gray-primary p-5 w-3/5 relative pb-5">
-          <div className="absolute bottom-16 left-0 text-3xl">,,,</div>
-          <p className="font-kufi-arabic text-2xl font-medium text-center">
-            {" "}
+      <div className="flex flex-col justify-center items-center pb-28 gap-8 px-4 sm:px-6 md:px-8">
+        <div className="border border-gray-primary p-6 w-full max-w-2xl relative">
+          <p className="font-kufi-arabic text-lg sm:text-xl md:text-2xl font-medium text-center leading-relaxed">
             ...درد یا لذت کاری که انجام میدی نمیمونه اما افتخار یا شرمندگیش چرا
           </p>
-          <div className="absolute top-11 right-0 text-3xl">,,,</div>
         </div>
-        <div className="flex justify-center flex-col items-center">
-          <div className="animate-bounce text-6xl text-white">↓</div>
-          <div>
-            <p className="text-2xl font-bold text-primary">Scroll down</p>
+        {/* Down arrow and text */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="animate-bounce text-4xl sm:text-5xl md:text-6xl text-white">
+            ↓
           </div>
+          <p className="text-lg sm:text-xl font-bold text-primary">
+            Scroll down
+          </p>
         </div>
       </div>
       <div>
@@ -103,9 +106,38 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-wrap gap-4 items-center justify-center">
-            <Card />
-            <Card />
-            <Card />
+            <Card
+              image="/images/pixel.png"
+              tech="Next.js Tailwind CSS TypeScript"
+              title="pixelgenius"
+              description="Market place"
+              buttonLabel="View Project"
+              showButton={false}
+            />
+            <Card
+              image="/images/leven.png"
+              tech="Next.js Tailwind CSS TypeScript"
+              title="pixelgenius"
+              description="Market place"
+              buttonLabel="View Project"
+              showButton={false}
+            />
+            <Card
+              image="/images/prtfolio.png"
+              tech="Next.js Tailwind CSS TypeScript"
+              title="pixelgenius"
+              description="Market place"
+              buttonLabel="View Project"
+              showButton={false}
+            />
+            <Card
+              image="/images/cigaret.png"
+              tech="Next.js Tailwind CSS TypeScript"
+              title="pixelgenius"
+              description="Market place"
+              buttonLabel="View Project"
+              showButton={false}
+            />
           </div>
         </div>
         {/* skills */}
@@ -122,8 +154,9 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="parent">
-              <div className="div2 border border-gray-primary">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-6 grid-rows-none lg:grid-rows-6 gap-4">
+              {/* Tools */}
+              <div className="lg:col-start-6 lg:row-start-1 lg:row-span-2 border border-gray-primary">
                 <div className="border-b border-gray-primary p-2 text-lg font-semibold flex gap-2">
                   🛠️ Tools
                 </div>
@@ -131,51 +164,63 @@ export default function Home() {
                   •Git •VS Code •Figma
                 </div>
               </div>
-              <div className="div3 border border-gray-primary">
+
+              {/* Libraries */}
+              <div className="lg:col-start-6 lg:row-start-3 lg:row-span-2 border border-gray-primary">
                 <div className="border-b border-gray-primary p-2 text-lg font-semibold flex gap-2">
                   📚 Libraries
                 </div>
-                <div className="flexgap-2 text-gray-400 p-2">
+                <div className="flex gap-2 text-gray-400 p-2">
                   •React •Tailwind CSS •Bootstrap •Shadcn UI •Zod •React Hook
                   Form •Framer Motion
                 </div>
               </div>
-              <div className="div4 border border-gray-primary">
+
+              {/* Frameworks */}
+              <div className="lg:col-start-6 lg:row-start-5 lg:row-span-2 border border-gray-primary">
                 <div className="border-b border-gray-primary p-2 text-lg font-semibold flex gap-2">
                   🧱 Frameworks
                 </div>
-                <div className="flexgap-2 text-gray-400 p-2">
+                <div className="flex gap-2 text-gray-400 p-2">
                   •Next.js •TurboRepo
                 </div>
               </div>
-              <div className="div5 border border-gray-primary">
+
+              {/* Other */}
+              <div className="lg:col-start-5 lg:row-start-1 lg:row-span-2 border border-gray-primary">
                 <div className="border-b border-gray-primary p-2 text-lg font-semibold flex gap-2">
                   🧰 Other
                 </div>
-                <div className="flexgap-2 text-gray-400 p-2">
+                <div className="flex gap-2 text-gray-400 p-2">
                   •Responsive Design
                 </div>
               </div>
-              <div className="div6 border border-gray-primary">
+
+              {/* Taste */}
+              <div className="lg:col-start-5 lg:row-start-3 lg:row-span-2 border border-gray-primary">
                 <div className="border-b border-gray-primary p-2 text-lg font-semibold flex gap-2">
                   💖 Taste
                 </div>
-                <div className="flexgap-2 text-gray-400 p-2">
+                <div className="flex gap-2 text-gray-400 p-2">
                   •Responsive Design •Tailwind CSS •Shadcn UI •Framer Motion
                   •React
                 </div>
               </div>
-              <div className="div7 border border-gray-primary">
+
+              {/* Languages */}
+              <div className="lg:col-start-4 lg:row-start-1 lg:row-span-2 border border-gray-primary">
                 <div className="border-b border-gray-primary p-2 text-lg font-semibold flex gap-2">
                   🧩 Languages
                 </div>
-                <div className="flexgap-2 text-gray-400 p-2">
+                <div className="flex gap-2 text-gray-400 p-2">
                   •HTML •CSS •JavaScript •TypeScript •Sass/SCSS
                 </div>
               </div>
-              <div className="div9 relative">
+
+              {/* Logo + Decorations */}
+              <div className="hidden lg:block lg:col-start-1 lg:row-start-1 lg:col-span-3 lg:row-span-6 relative">
                 <Image
-                  src={"svg/Logo.svg"}
+                  src="svg/Logo.svg"
                   alt="Erfan Kashef"
                   width={200}
                   height={200}
@@ -183,18 +228,18 @@ export default function Home() {
                 />
                 <div className="absolute border border-gray-primary w-24 h-24 top-15 right-45"></div>
                 <Image
-                  src={"svg/Dots.svg"}
+                  src="svg/Dots.svg"
                   alt="Erfan Kashef"
                   width={100}
                   height={100}
-                  className="absolute top-11 left-16 "
+                  className="absolute top-11 left-16"
                 />
                 <Image
-                  src={"svg/Dots.svg"}
+                  src="svg/Dots.svg"
                   alt="Erfan Kashef"
                   width={100}
                   height={100}
-                  className="absolute bottom-45 right-72 "
+                  className="absolute bottom-45 right-72"
                 />
                 <div className="absolute border border-gray-primary w-14 h-14 bottom-25 right-25"></div>
               </div>
@@ -203,6 +248,7 @@ export default function Home() {
         </div>
         {/* about-me */}
         <div className="pb-24">
+          {/* Title Row */}
           <div className="pb-5">
             <div className="flex gap-4 items-center">
               <div className="w-full flex items-center gap-10">
@@ -214,51 +260,58 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="flex">
-            <div className="w-1/2 flex justify-center items-center">
-              <div className="">
+          {/* Content (Text + Image) */}
+          <div className="flex flex-col lg:flex-row">
+            {/* Text Section */}
+            <div className="w-full lg:w-1/2 flex justify-center items-center">
+              <div className="p-4 text-center lg:text-left">
                 <p className="font-normal text-2xl pb-7">
                   I am passionate about discovering new challenges and
                   addressing them effectively. I find working in a team both
                   inspiring and rewarding, and I have a proven track record of
-                  excelling in collaborative projects and teambased environments
+                  excelling in collaborative projects and team-based
+                  environments.
                 </p>
-                <button
-                  className="border border-primary text-white px-4 py-2 rounded-md"
-                  type="button"
-                >
-                  View all
-                </button>
+                <Link href="/about-me" className="cursor-pointer">
+                  <button
+                    className="border border-primary text-white px-4 py-2 rounded-md cursor-pointer"
+                    type="button"
+                  >
+                    View all
+                  </button>
+                </Link>
               </div>
             </div>
-            <div className="w-1/2 flex justify-center items-center relative">
+
+            {/* Image Section */}
+            <div className="w-full lg:w-1/2 flex justify-center items-center relative mt-12 lg:mt-0">
               <Image
-                src={"/images/ErfanKashef1.png"}
+                src="/images/ErfanKashef1.png"
                 alt="Erfan Kashef"
                 width={500}
                 height={500}
                 className=""
               />
               <Image
-                src={"svg/Dots.svg"}
-                alt="Erfan Kashef"
+                src="/svg/Dots.svg"
+                alt="dots"
                 width={100}
                 height={100}
-                className="absolute top-9 left-35 "
+                className="absolute top-9 left-20"
               />
               <Image
-                src={"svg/Dots.svg"}
-                alt="Erfan Kashef"
+                src="/svg/Dots.svg"
+                alt="dots"
                 width={100}
                 height={100}
-                className="absolute bottom-5 right-30 "
+                className="absolute bottom-5 right-10"
               />
               <Image
-                src={"svg/Logo.svg"}
-                alt="Erfan Kashef"
+                src="/svg/Logo.svg"
+                alt="logo"
                 width={200}
                 height={200}
-                className="absolute top-5 right-35 -z-10 "
+                className="absolute top-5 right-20 -z-10"
               />
             </div>
           </div>
@@ -266,6 +319,7 @@ export default function Home() {
         {/* contact */}
         <section id="contact">
           <div className="pb-24">
+            {/* Title */}
             <div className="pb-5">
               <div className="flex gap-4 items-center">
                 <div className="w-full flex items-center gap-10">
@@ -277,27 +331,48 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex justify-between items-center">
-              <div className="w-1/2">
+
+            {/* Content */}
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10">
+              {/* Text */}
+              <div className="w-full lg:w-1/2 text-center lg:text-left">
                 <p>
                   I’m interested in freelance opportunities. However, if you
-                  have other request or question, don’t hesitate to contact me
+                  have other requests or questions, don’t hesitate to contact
+                  me.
                 </p>
               </div>
-              <div className="">
-                <div className="border border-gray-primary p-2 text-center">
-                  <p>Message me here</p>
-                  <div className="flex gap-2 items-center">
-                    <IconMail size={32} />
-                    <p>erfankashefdev@gamil.com</p>
+
+              {/* Contact Info */}
+              <div className="w-full lg:w-auto">
+                <div className="border border-gray-primary p-4 text-center space-y-2">
+                  <p className="font-semibold text-lg">Message me here</p>
+                  <a
+                    href="mailto:erfankashefdev@gmail.com"
+                    className="flex gap-2 items-center justify-center cursor-pointer text-gray-primary hover:text-primary"
+                  >
+                    <IconMail size={24} />
+                    <p>erfankashefdev@gmail.com</p>
+                  </a>
+                  <div className="flex gap-2 items-center justify-center">
+                    <a
+                      href="https://instagram.com/erfan_kasheff"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex gap-2 items-center justify-center cursor-pointer text-gray-primary hover:text-primary"
+                    >
+                      <IconBrandInstagram size={24} />
+                      <p>erfan_kasheff</p>
+                    </a>
                   </div>
-                  <div className="flex gap-2 items-center">
-                    <IconBrandInstagram size={32} />
-                    <p>erfan_kasheff</p>
-                  </div>
-                  <div className="flex gap-2 items-center">
-                    <IconPhone size={32} />
-                    <p>09355633507</p>
+                  <div className="flex gap-2 items-center justify-center">
+                    <a
+                      href="tel:09355633507"
+                      className="flex gap-2 items-center justify-center cursor-pointer text-gray-primary hover:text-primary"
+                    >
+                      <IconPhone size={24} />
+                      <p>09355633507</p>
+                    </a>
                   </div>
                 </div>
               </div>
