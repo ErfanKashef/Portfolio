@@ -3,11 +3,10 @@ import {
   IconBrandInstagram,
   IconMail,
   IconPhone,
-  IconPlayerPlay,
 } from "@tabler/icons-react";
 import Image from "next/image";
-import Card from "./_components/card";
 import Link from "next/link";
+import Card from "./_components/card";
 
 export default function Home() {
   return (

@@ -1,5 +1,4 @@
 import {
-  IconBrandFigma,
   IconBrandGithub,
   IconBrandInstagram,
   IconMail,
