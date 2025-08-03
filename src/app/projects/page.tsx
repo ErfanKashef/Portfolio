@@ -55,7 +55,7 @@ const Projectspage = () => {
               small-projects
             </p>
           </div>
-          <div className="flex flex-wrap gap-4 justify-start items-center pb-44">
+          <div className="flex flex-wrap gap-4 justify-center items-center pb-44">
             <Miniprojectcard />
             <Miniprojectcard />
             <Miniprojectcard />
