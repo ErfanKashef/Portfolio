@@ -13,39 +13,45 @@ const Projectspage = () => {
         </div>
 
         {/* complete-apps */}
-        <div className="flex flex-wrap gap-4 items-center justify-center pb-24 ">
-          <Card
-            image="/images/pixel.png"
-            tech="Next.js Tailwind CSS TypeScript"
-            title="pixelgenius"
-            description="Market place"
-            buttonLabel="View Project"
-            showButton={false}
-          />
-          <Card
-            image="/images/leven.png"
-            tech="Next.js Tailwind CSS TypeScript"
-            title="pixelgenius"
-            description="Market place"
-            buttonLabel="View Project"
-            showButton={false}
-          />
-          <Card
-            image="/images/prtfolio.png"
-            tech="Next.js Tailwind CSS TypeScript"
-            title="pixelgenius"
-            description="Market place"
-            buttonLabel="View Project"
-            showButton={false}
-          />
-          <Card
-            image="/images/cigaret.png"
-            tech="Next.js Tailwind CSS TypeScript"
-            title="pixelgenius"
-            description="Market place"
-            buttonLabel="View Project"
-            showButton={false}
-          />
+        <div className="w-full max-w-5xl mx-auto px-4 pb-24">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
+            {/* first row */}
+            <Card
+              image="/images/pixel.png"
+              tech="Next.js Tailwind CSS TypeScript"
+              title="pixelgenius"
+              description="Market place"
+              buttonLabel="View Project"
+              showButton={false}
+            />
+            <Card
+              image="/images/leven.png"
+              tech="Next.js Tailwind CSS TypeScript"
+              title="leven"
+              description="Market place"
+              buttonLabel="View Project"
+              showButton={false}
+            />
+            <Card
+              image="/images/prtfolio.png"
+              tech="Next.js Tailwind CSS TypeScript"
+              title="prtfolio"
+              description="Market place"
+              buttonLabel="View Project"
+              showButton={false}
+            />
+            {/* Second line — fourth card under the first card */}
+            <div className="lg:col-start-1">
+              <Card
+                image="/images/cigaret.png"
+                tech="Next.js Tailwind CSS TypeScript"
+                title="cigaret"
+                description="Market place"
+                buttonLabel="View Project"
+                showButton={false}
+              />
+            </div>
+          </div>
         </div>
         {/* small-projects */}
         <div>
