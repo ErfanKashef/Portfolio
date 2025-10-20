@@ -8,13 +8,7 @@ const Navbar = () => {
 
   // Prevent body scroll when sidebar is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-
-    // Cleanup on unmount
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
     return () => {
       document.body.style.overflow = "unset";
     };
@@ -68,10 +62,10 @@ const Navbar = () => {
         />
       )}
 
-      {/* Sidebar */}
+      {/* Sidebar from bottom */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 bg-background shadow-2xl transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed bottom-0 left-0 w-full h-[70vh] bg-background shadow-2xl transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
+          isOpen ? "translate-y-0" : "translate-y-full"
         }`}
       >
         <div className="flex flex-col h-full">
@@ -88,43 +82,24 @@ const Navbar = () => {
 
           {/* Navigation Links */}
           <div className="flex-1 flex flex-col justify-center px-6 space-y-6">
-            <Link
-              href="/"
-              className="cursor-pointer group"
-              onClick={() => setIsOpen(false)}
-            >
-              <p className="text-xl font-medium group-hover:text-primary transition-colors">
-                <span className="text-primary">#</span> Home
-              </p>
-            </Link>
-            <Link
-              href="/projects"
-              className="cursor-pointer group"
-              onClick={() => setIsOpen(false)}
-            >
-              <p className="text-xl font-medium group-hover:text-primary transition-colors">
-                <span className="text-primary">#</span> Projects
-              </p>
-            </Link>
-            <Link
-              href="/about-me"
-              className="cursor-pointer group"
-              onClick={() => setIsOpen(false)}
-            >
-              <p className="text-xl font-medium group-hover:text-primary transition-colors">
-                <span className="text-primary">#</span> About
-              </p>
-            </Link>
-            <Link
-              href="#contact"
-              scroll={true}
-              className="cursor-pointer group"
-              onClick={() => setIsOpen(false)}
-            >
-              <p className="text-xl font-medium group-hover:text-primary transition-colors">
-                <span className="text-primary">#</span> Contact
-              </p>
-            </Link>
+            {[
+              { href: "/", label: "Home" },
+              { href: "/projects", label: "Projects" },
+              { href: "/about-me", label: "About" },
+              { href: "#contact", label: "Contact", scroll: true },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                scroll={item.scroll}
+                className="cursor-pointer group"
+                onClick={() => setIsOpen(false)}
+              >
+                <p className="text-xl font-medium group-hover:text-primary transition-colors">
+                  <span className="text-primary">#</span> {item.label}
+                </p>
+              </Link>
+            ))}
           </div>
 
           {/* Footer */}

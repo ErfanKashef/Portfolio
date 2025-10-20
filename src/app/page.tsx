@@ -10,7 +10,7 @@ import Card from "./_components/card";
 
 export default function Home() {
   return (
-    <div className="pt-10">
+    <div className="pt-10 mx-3">
       {/* heder */}
       <div className="flex justify-center items-center pb-24 px-4">
         <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start">

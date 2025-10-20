@@ -29,7 +29,7 @@ const Aboutpage = () => {
   return (
     <div>
       {/* heder */}
-      <div className="pb-32 px-4">
+      <div className="pb-32 px-4 ">
         <div>
           <div className="flex flex-row gap-0.5 items-center pt-10">
             <span className="text-primary text-3xl md:text-4xl font-medium">
