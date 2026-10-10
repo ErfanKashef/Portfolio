@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en" className={`${Firacode.variable} ${Kufi.variable} `}>
       <body className={` font-fira-code `}>
         <MediaHeader />
-        <div className="container mx-auto w-full ">
+        <div className="container mx-auto w-full lg:px-16">
           <Navbar />
           {children}
           <Footer />

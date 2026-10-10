@@ -19,14 +19,16 @@ const Card = ({
   showButton = true,
 }: CardProps) => {
   return (
-    <div className="border border-gray-primary">
-      <Image
-        src={image}
-        alt={title}
-        width={350}
-        height={540}
-        className=""
-      />
+    <article className="flex h-full w-full flex-col overflow-hidden border border-gray-primary">
+      <div className="relative aspect-video w-full overflow-hidden">
+        <Image
+          src={image}
+          alt={`${title} project preview`}
+          fill
+          sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw"
+          className="object-cover"
+        />
+      </div>
 
       {tech && (
         <div className="border border-gray-primary p-2">
@@ -34,7 +36,7 @@ const Card = ({
         </div>
       )}
 
-      <div className="p-4 flex flex-col gap-4 items-start">
+      <div className="flex flex-1 flex-col items-start gap-4 p-4">
         <p className="text-2xl font-medium">{title}</p>
         <p className="text-base font-normal text-gray-primary">{description}</p>
 
@@ -48,7 +50,7 @@ const Card = ({
           </button>
         )}
       </div>
-    </div>
+    </article>
   );
 };
 
