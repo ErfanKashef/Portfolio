@@ -1,113 +1,106 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { IconMenu2, IconX } from "@tabler/icons-react";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+  { href: "/about-me", label: "About" },
+  { href: "/#contact", label: "Contact" },
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Prevent body scroll when sidebar is open
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "unset";
-    return () => {
-      document.body.style.overflow = "unset";
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setIsOpen(false);
     };
-  }, [isOpen]);
+
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
 
   return (
-    <nav className="pt-8 px-4 md:px-8">
-      <div className="flex justify-between items-center">
+    <nav className="px-4 pt-8 md:px-8">
+      <div className="flex items-center justify-between">
         <p className="text-base font-bold">Erfan Kashef</p>
 
-        {/* Hamburger for mobile */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 hover:bg-gray-700 rounded-md transition-colors"
-          >
-            {isOpen ? <IconX size={28} /> : <IconMenu2 size={28} />}
-          </button>
-        </div>
-
-        {/* Desktop menu */}
-        <div className="hidden md:flex gap-8">
-          <Link href="/" className="cursor-pointer">
-            <p className="text-base font-medium">
-              <span className="text-primary">#</span> Home
-            </p>
-          </Link>
-          <Link href="/projects" className="cursor-pointer">
-            <p className="text-base font-medium">
-              <span className="text-primary">#</span> Projects
-            </p>
-          </Link>
-          <Link href="/about-me" className="cursor-pointer">
-            <p className="text-base font-medium">
-              <span className="text-primary">#</span> About
-            </p>
-          </Link>
-          <Link href="#contact" scroll={true} className="cursor-pointer">
-            <p className="text-base font-medium">
-              <span className="text-primary">#</span> Contact
-            </p>
-          </Link>
-        </div>
-      </div>
-
-      {/* Sidebar Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black opacity-50 z-40 md:hidden"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-
-      {/* Sidebar from bottom */}
-      <div
-        className={`fixed bottom-0 left-0 w-full h-[70vh] bg-background shadow-2xl transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
-          isOpen ? "translate-y-0" : "translate-y-full"
-        }`}
-      >
-        <div className="flex flex-col h-full">
-          {/* Header */}
-          <div className="flex justify-between items-center p-6 border-b">
-            <p className="text-lg font-bold">Menu</p>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild>
             <button
-              onClick={() => setIsOpen(false)}
-              className="p-2 hover:bg-gray-100 rounded-md transition-colors"
+              type="button"
+              aria-label="Open menu"
+              className="rounded-md p-2 transition-colors hover:bg-foreground/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current md:hidden"
             >
-              <IconX size={24} />
+              <IconMenu2 size={28} aria-hidden="true" />
             </button>
-          </div>
+          </SheetTrigger>
 
-          {/* Navigation Links */}
-          <div className="flex-1 flex flex-col justify-center px-6 space-y-6">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/projects", label: "Projects" },
-              { href: "/about-me", label: "About" },
-              { href: "#contact", label: "Contact", scroll: true },
-            ].map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                scroll={item.scroll}
-                className="cursor-pointer group"
-                onClick={() => setIsOpen(false)}
-              >
-                <p className="text-xl font-medium group-hover:text-primary transition-colors">
-                  <span className="text-primary">#</span> {item.label}
-                </p>
-              </Link>
-            ))}
-          </div>
+          <SheetContent
+            side="left"
+            showCloseButton={false}
+            className="gap-0 border-gray-primary bg-background text-foreground data-[side=left]:w-[min(85vw,22rem)] md:hidden"
+          >
+            <SheetHeader className="flex-row items-center justify-between border-b border-gray-primary p-6">
+              <div>
+                <SheetTitle className="text-lg font-bold text-foreground">
+                  Menu
+                </SheetTitle>
+                <SheetDescription className="sr-only">
+                  Navigate the portfolio
+                </SheetDescription>
+              </div>
+              <SheetClose asChild>
+                <button
+                  type="button"
+                  aria-label="Close menu"
+                  className="rounded-md p-2 transition-colors hover:bg-foreground/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+                >
+                  <IconX size={24} aria-hidden="true" />
+                </button>
+              </SheetClose>
+            </SheetHeader>
 
-          {/* Footer */}
-          <div className="p-6 border-t">
-            <p className="text-sm text-gray-500 text-center">
+            <div className="flex flex-1 flex-col justify-center gap-6 px-6">
+              {links.map((item) => (
+                <SheetClose asChild key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="group text-xl font-medium transition-colors hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current"
+                  >
+                    <span className="text-primary">#</span> {item.label}
+                  </Link>
+                </SheetClose>
+              ))}
+            </div>
+
+            <div className="border-t border-gray-primary p-6 text-center text-sm text-gray-primary">
               © 2024 Erfan Kashef
-            </p>
-          </div>
+            </div>
+          </SheetContent>
+        </Sheet>
+
+        <div className="hidden gap-8 md:flex">
+          {links.map((item) => (
+            <Link key={item.label} href={item.href} className="cursor-pointer">
+              <p className="text-base font-medium">
+                <span className="text-primary">#</span> {item.label}
+              </p>
+            </Link>
+          ))}
         </div>
       </div>
     </nav>

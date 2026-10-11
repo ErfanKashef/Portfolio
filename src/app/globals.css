@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
   --background: #ffffff;
@@ -12,8 +13,7 @@
   --color-gray-primary: var(--gray-primary);
   --font-fira-code: var(--font-fira-code);
   --font-fira-mono: var(--font-fira-mono);
-  --font-kufi-arabic: var(--font-kufi-arabic) 
-  
+  --font-kufi-arabic: var(--font-kufi-arabic);
 }
 
 @media (prefers-color-scheme: dark) {
